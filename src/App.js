@@ -4,6 +4,7 @@ import Home from "./routes/Home/Home.component"
 import Navigation from "./routes/Navigation/Navigation.component";
 import Authentication from "./routes/authentication/authentication.component";
 import "./app.styles.scss";
+import Shop from "./routes/shop/shop.component";
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
       <Routes>
           <Route path="/" element={ <Navigation/> } > 
             <Route index  element={<Home/>} />
-            <Route path="shop" element='I am the Shop'/>
+            <Route path="shop" element={ <Shop/> }/>
             <Route path="auth" element= {<Authentication/>} />
           </Route>
       </Routes>
