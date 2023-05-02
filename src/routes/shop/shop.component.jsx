@@ -1,16 +1,23 @@
-import React, { useContext } from "react";
+import React, { Fragment, useContext } from "react";
 import './shop.style.scss'
-import { ProductsContext } from "../../contexts/products.context";
 import ProductCard from "../../components/product-card/product-card.component";
+import CategoryPreview from "../../components/category-preview/category-preview.component";
+
+import { CategoriesContext } from "../../contexts/categories.context";
 
 const Shop = () => {
-    const { products } = useContext(ProductsContext)
+    const { categoriesMap } = useContext(CategoriesContext)
     return (
-        <div className="products-container">
+        <div className="shop-container">
+
             {
-                products.map((product) => (
-                    <ProductCard key={product.id} product={product} />
-                ))
+                Object.keys(categoriesMap).map((title) => {
+                    const products = categoriesMap[title]
+                    return (
+                        <CategoryPreview key={title} title={title} products={products} />
+                    )
+
+                })
             }
         </div>
     )
