@@ -1,6 +1,5 @@
 import { useNavigate } from 'react-router-dom';
 import './category-item.style.scss'
-import { useEffect } from 'react';
 
 
 
