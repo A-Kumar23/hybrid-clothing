@@ -9,8 +9,8 @@ import Checkout from "./routes/checkout/checkout.component";
 
 function App() {
   return (
-    <>
-      <Routes>
+    <div className="app">
+      <Routes >
           <Route path="/" element={ <Navigation/> } > 
             <Route index  element={<Home/>} />
             <Route path="shop/*" element={ <Shop/> }/>
@@ -18,7 +18,7 @@ function App() {
             <Route path="checkout" element= {<Checkout/>} />
           </Route>
       </Routes>
-    </>
+    </div>
     
   );
 }
